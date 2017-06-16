@@ -30,26 +30,26 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void onButtonClick(View view) {
         Log.e("회원가입", "클릭");
-        postSignUp();
+//        postSignUp();
     }
 
-    private void postSignUp() {
-        HashMap<String, String> params = new HashMap<String, String>();
-        params.put("id", binding.etSignUpId.getText().toString());
-        params.put("pw", binding.etSignUpPw.getText().toString());
-        params.put("email", binding.etSignUpEmail.getText().toString());
-        ListService.api().signUp(params).enqueue(new Callback<Object>() {
-            @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-                Gson mGson = new Gson();
-                String json = mGson.toJson(response);
-            }
-
-            @Override
-            public void onFailure(Call<Object> call, Throwable t) {
-
-            }
-        });
-    }
+//    private void postSignUp() {
+//        HashMap<String, String> params = new HashMap<String, String>();
+//        params.put("id", binding.etSignUpId.getText().toString());
+//        params.put("pw", binding.etSignUpPw.getText().toString());
+//        params.put("email", binding.etSignUpEmail.getText().toString());
+//        ListService.api().signUp(params).enqueue(new Callback<Object>() {
+//            @Override
+//            public void onResponse(Call<Object> call, Response<Object> response) {
+//                Gson mGson = new Gson();
+//                String json = mGson.toJson(response);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Object> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 
 }
