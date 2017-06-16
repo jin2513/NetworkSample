@@ -30,10 +30,11 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void onButtonClick(View view) {
         Log.e("회원가입", "클릭");
-        postSignUp();
+//        postSignUp();
     }
 
     private void postSignUp() {
+        // network connect
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("id", binding.etSignUpId.getText().toString());
         params.put("pw", binding.etSignUpPw.getText().toString());
