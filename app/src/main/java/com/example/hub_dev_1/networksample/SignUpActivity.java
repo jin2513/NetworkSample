@@ -34,7 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void postSignUp() {
-        // 먼가를 작업함 
+        // 먼가를 작업함 111
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("id", binding.etSignUpId.getText().toString());
         params.put("pw", binding.etSignUpPw.getText().toString());
