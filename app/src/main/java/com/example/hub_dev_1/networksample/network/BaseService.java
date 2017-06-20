@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BaseService {
 
     protected static Object retrofit(Class<?> className) {
-        String host = "http://127.0.0.1:5000/";
+        String host = "http://192.168.0.47:8000/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(host)
                 .addConverterFactory(GsonConverterFactory.create())

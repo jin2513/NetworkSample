@@ -25,31 +25,32 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up);
-        binding.setActivity(this);
     }
 
     public void onButtonClick(View view) {
         Log.e("회원가입", "클릭");
-//        postSignUp();
+        postSignUp();
     }
 
     private void postSignUp() {
         // network connect
         // 먼가를 작업함 111
         HashMap<String, String> params = new HashMap<String, String>();
-        params.put("id", binding.etSignUpId.getText().toString());
-        params.put("pw", binding.etSignUpPw.getText().toString());
+        params.put("username", binding.etSignUpId.getText().toString());
+        params.put("passwd", binding.etSignUpPw.getText().toString());
         params.put("email", binding.etSignUpEmail.getText().toString());
         ListService.api().signUp(params).enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
-                Gson mGson = new Gson();
-                String json = mGson.toJson(response);
+                Gson gson = new Gson();
+                String json = gson.toJson(response);
+                Log.e("json", json);
+                Log.e("response", response.body().toString());
             }
 
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
-
+                Log.e("fail", "fail");
             }
         });
     }
